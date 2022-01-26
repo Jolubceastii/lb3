@@ -1,0 +1,14 @@
+﻿version: "3.9"
+services:
+    web:
+        build:
+            context: .
+        ports:
+            - "8000:80"
+        depends_on:
+            - db
+    db:
+        image: "mcr.microsoft.com/mssql/server"
+        environment:
+            SA_PASSWORD: "jumpjet200111@3A"
+            ACCEPT_EULA: "Y"
